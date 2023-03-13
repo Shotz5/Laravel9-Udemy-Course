@@ -10,10 +10,9 @@ class IndexController extends Controller
     public function index()
     {
         dd(Listing::
-            where('beds', '>', 4)
-            ->where('area', '>', 100)
-            ->orderBy('beds')
-            ->get()
+            where('beds', '>=', 4)
+            ->orderBy('price', 'asc')
+            ->first()
         );
         return inertia('Index/Index', [
             'message' => 'Hello from Laravel',
