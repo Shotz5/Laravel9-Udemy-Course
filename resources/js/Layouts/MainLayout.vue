@@ -2,7 +2,7 @@
     <Link href="/">Main Page</Link>&nbsp;
     <Link href="/show">Show Page</Link>
     <div>The page with time {{ timer }}</div>
-    <slot></slot>
+    <slot>Default</slot>
 </template>
 
 <script setup>
