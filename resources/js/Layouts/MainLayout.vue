@@ -4,23 +4,14 @@
     <div v-if="flashSuccess" class="success">
         {{ flashSuccess }}
     </div>
-    <div>
-        {{ y }}
-    </div>
     <slot>Default</slot>
 </template>
 
 <script setup>
     import { Link, usePage } from '@inertiajs/vue3'
-    import { computed, ref } from 'vue'
+    import { computed } from 'vue'
 
-    const x = ref(0);
-    const y = computed(() => { return x.value * 2 })
-
-    const page = usePage()
-    const flashSuccess = computed(() => { 
-        return page.props.flash.success 
-    })
+    const flashSuccess = computed(() => usePage().props.flash.success)
 </script>
 
 <style scoped>
