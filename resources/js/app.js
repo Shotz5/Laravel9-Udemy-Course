@@ -1,6 +1,7 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import MainLayout from './Layouts/MainLayout.vue'
+import { ZiggyVue } from 'ziggy'
 
 createInertiaApp({
   resolve: name => {
@@ -22,6 +23,7 @@ createInertiaApp({
     // h - Render function - advanced topic - at end of course
     createApp({ render: () => h(App, props) })
       .use(plugin)
+      .use(ZiggyVue)
       .mount(el)
   },
 })
