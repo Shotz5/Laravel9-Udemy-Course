@@ -8,8 +8,13 @@
                 <div class="text-xl text-indigo-600 dark:text-indigo-300 font-bold text-center">
                     <Link :href="route('listing.index')">LaraZillow</link>
                 </div>
-                <div>
+                <div class="flex items-center gap-4" v-if="user">
+                    <div class="text-sm text-gray-500 dark:text-gray-200">{{ user.name }}</div>
                     <Link :href="route('listing.create')" class="btn-primary">+ New Listing</link>
+                    <div>Logout</div>
+                </div>
+                <div v-else>
+                    <Link :href="route('login')">Sign in</Link>
                 </div>
             </nav>
         </div>
@@ -31,5 +36,8 @@
     import { Link, usePage } from '@inertiajs/vue3'
     import { computed } from 'vue'
 
-    const flashSuccess = computed(() => usePage().props.flash.success)
+    const page = usePage();
+    const flashSuccess = computed(() => page.props.flash.success)
+
+    const user = computed(() => page.props.user);
 </script>
