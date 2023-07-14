@@ -1,12 +1,11 @@
 {
 	"folders": [
 		{
-			"name": "laravel-vue-inertia",
-			"path": "Z:/Documents/Course Notes/laravel-vue-inertia"
-		},
-		{
 			"name": "Laravel9-Udemy-Course-Code",
 			"path": "."
+		},
+		{
+			"path": "Z:/Documents/Course Notes/laravel-vue-inertia"
 		}
 	]
 }
